@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Espresso Brews - Coffee Brewing Guides & Techniques";
+const description = "Comprehensive guides on coffee brewing, espresso techniques, pour-over methods, and specialty coffee preparation for enthusiasts and professionals.";
+---
+
+<BaseLayout title={title} description={description}>
+  <Header slot="header" />
+  
+  <!-- Hero Section -->
+  <section class="relative bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="flex flex-col gap-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
+            <span class="material-symbols-outlined text-sm">verified</span>
+            Professional Brewing Guides
+          </div>
+          <h1 class="text-slate-900 dark:text-slate-100 text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+            Master the Art of <span class="text-primary">Coffee Brewing</span>
+          </h1>
+          <p class="text-slate-600 dark:text-slate-400 text-lg sm:text-xl leading-relaxed max-w-xl">
+            From espresso extraction to pour-over perfection, discover comprehensive guides and techniques for brewing exceptional coffee at home or professionally.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/coffee-brewing/" class="bg-primary text-white px-8 py-4 rounded text-base font-bold shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all">
+              Explore Guides
+            </a>
+            <a href="/coffee-brewing/tools/" class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white px-8 py-4 rounded text-base font-bold hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
+              Equipment Guide
+            </a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-video lg:aspect-square rounded-xl overflow-hidden shadow-2xl bg-slate-200 dark:bg-slate-800">
+            <div class="w-full h-full bg-gradient-to-br from-amber-700 to-amber-900 flex items-center justify-center">
+              <span class="material-symbols-outlined text-8xl text-white/80">coffee</span>
+            </div>
+          </div>
+          <div class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-6 rounded-lg shadow-xl border border-slate-100 dark:border-slate-700 hidden sm:block">
+            <div class="flex items-center gap-4">
+              <div class="p-3 bg-primary/10 rounded-full text-primary">
+                <span class="material-symbols-outlined text-3xl">local_cafe</span>
+              </div>
+              <div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Daily Brewers</p>
+                <p class="text-2xl font-bold text-slate-900 dark:text-white">2.25B+</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Topic Cards -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Coffee Brewing Resources</h2>
+        <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Explore our comprehensive collection of brewing guides, techniques, and coffee knowledge.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <a href="/coffee-brewing/" class="group cursor-pointer block">
+          <div class="aspect-video rounded-lg overflow-hidden mb-6 bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center">
+            <span class="material-symbols-outlined text-6xl text-white/80 group-hover:scale-110 transition-transform">menu_book</span>
+          </div>
+          <div class="flex flex-col gap-2">
+            <span class="text-primary text-xs font-bold uppercase tracking-widest">Foundation</span>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Overview</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Comprehensive introduction to coffee brewing fundamentals, from bean selection to extraction principles.</p>
+          </div>
+        </a>
+        <a href="/coffee-brewing/history/" class="group cursor-pointer block">
+          <div class="aspect-video rounded-lg overflow-hidden mb-6 bg-gradient-to-br from-amber-700 to-amber-900 flex items-center justify-center">
+            <span class="material-symbols-outlined text-6xl text-white/80 group-hover:scale-110 transition-transform">history</span>
+          </div>
+          <div class="flex flex-col gap-2">
+            <span class="text-primary text-xs font-bold uppercase tracking-widest">Origins</span>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">History & Evolution</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Journey through the rich history of coffee, from Ethiopian origins to modern specialty coffee culture.</p>
+          </div>
+        </a>
+        <a href="/coffee-brewing/technical-deep-dive/" class="group cursor-pointer block">
+          <div class="aspect-video rounded-lg overflow-hidden mb-6 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
+            <span class="material-symbols-outlined text-6xl text-white/80 group-hover:scale-110 transition-transform">science</span>
+          </div>
+          <div class="flex flex-col gap-2">
+            <span class="text-primary text-xs font-bold uppercase tracking-widest">Science</span>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Technical Deep-Dive</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Explore the science behind extraction, grind size, water chemistry, and brewing variables.</p>
+          </div>
+        </a>
+        <a href="/coffee-brewing/ontology/" class="group cursor-pointer block">
+          <div class="aspect-video rounded-lg overflow-hidden mb-6 bg-gradient-to-br from-emerald-600 to-emerald-800 flex items-center justify-center">
+            <span class="material-symbols-outlined text-6xl text-white/80 group-hover:scale-110 transition-transform">account_tree</span>
+          </div>
+          <div class="flex flex-col gap-2">
+            <span class="text-primary text-xs font-bold uppercase tracking-widest">Knowledge</span>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Ontology</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Structured coffee knowledge base covering varieties, processing methods, and regional characteristics.</p>
+          </div>
+        </a>
+        <a href="/coffee-brewing/trends/" class="group cursor-pointer block">
+          <div class="aspect-video rounded-lg overflow-hidden mb-6 bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center">
+            <span class="material-symbols-outlined text-6xl text-white/80 group-hover:scale-110 transition-transform">trending_up</span>
+          </div>
+          <div class="flex flex-col gap-2">
+            <span class="text-primary text-xs font-bold uppercase tracking-widest">Future</span>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Trends & Outlook</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Stay current with emerging brewing methods, equipment innovations, and industry developments.</p>
+          </div>
+        </a>
+        <a href="/coffee-brewing/challenges/" class="group cursor-pointer block">
+          <div class="aspect-video rounded-lg overflow-hidden mb-6 bg-gradient-to-br from-rose-600 to-rose-800 flex items-center justify-center">
+            <span class="material-symbols-outlined text-6xl text-white/80 group-hover:scale-110 transition-transform">lightbulb</span>
+          </div>
+          <div class="flex flex-col gap-2">
+            <span class="text-primary text-xs font-bold uppercase tracking-widest">Solutions</span>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Challenges</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Common brewing problems and practical solutions to improve your coffee quality.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-slate-900 text-white overflow-hidden relative">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#1773cf,transparent_70%)]"></div>
+    </div>
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h2 class="text-3xl sm:text-4xl font-black mb-6">Start Your Coffee Journey</h2>
+      <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
+        Whether you're a beginner or experienced barista, our comprehensive guides will help you brew better coffee.
+      </p>
+      <a href="/coffee-brewing/tools/" class="inline-block bg-primary hover:bg-primary/90 text-white font-bold px-8 py-4 rounded-lg transition-all">
+        Browse Equipment Guide
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

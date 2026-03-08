@@ -1,0 +1,116 @@
+---
+import TopicLayout from '../../layouts/TopicLayout.astro';
+import ContentSection from '../../components/ContentSection.astro';
+
+const title = "Coffee Brewing Overview - Fundamentals & Techniques | Espresso Brews";
+const description = "Comprehensive overview of coffee brewing fundamentals including extraction principles, brewing methods, grind sizes, and water quality requirements for perfect coffee.";
+---
+
+<TopicLayout title={title} description={description} currentPage="index">
+  <article class="prose dark:prose-invert max-w-none">
+    <h1 class="text-4xl font-bold text-slate-900 dark:text-white mb-6">Coffee Brewing Overview</h1>
+    
+    <ContentSection title="Introduction to Coffee Brewing" id="introduction">
+      <p class="text-lg leading-relaxed mb-4">
+        Coffee brewing is both an art and a science, combining precise measurements with sensory intuition to create the perfect cup. Whether you're a home enthusiast or aspiring professional, understanding the fundamentals of coffee brewing is essential for consistently producing exceptional beverages. This comprehensive guide explores the core principles, methods, and techniques that form the foundation of quality coffee preparation.
+      </p>
+      <p class="leading-relaxed mb-4">
+        The journey from green coffee bean to finished cup involves numerous variables that significantly impact flavor, aroma, and overall quality. According to research published by the Specialty Coffee Association (<a href="https://sca.coffee" target="_blank" rel="noopener noreferrer">Specialty Coffee Association</a>), brewing parameters including water temperature, grind size, extraction time, and coffee-to-water ratio all play crucial roles in determining the final taste profile of your coffee.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Understanding these variables allows brewers to manipulate them intentionally, creating specific flavor profiles and adjusting for different coffee origins, roast levels, and personal preferences. This guide serves as your foundation for exploring the diverse world of coffee brewing methods and techniques.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="The Science of Coffee Extraction" id="extraction">
+      <p class="leading-relaxed mb-4">
+        Coffee extraction is the process of dissolving soluble compounds from ground coffee beans into water. This complex chemical process involves the dissolution of acids, sugars, lipids, and other compounds that contribute to coffee's flavor, aroma, and body. Understanding extraction science is fundamental to mastering any brewing method.
+      </p>
+      <p class="leading-relaxed mb-4">
+        During extraction, water acts as a solvent, penetrating the cellular structure of ground coffee and dissolving various compounds at different rates. The first compounds to extract are acids and fruit notes, followed by sugars and sweetness, and finally bitter compounds and caffeine. Proper extraction requires balancing these elements to achieve a harmonious flavor profile.
+      </p>
+      <p class="leading-relaxed mb-4">
+        The <a href="/coffee-brewing/technical-deep-dive/">technical deep-dive section</a> provides detailed information on extraction percentages, total dissolved solids (TDS), and the mathematical models used to predict and control extraction outcomes. For now, understand that proper extraction typically occurs between 18-22% of the coffee's total mass, with target TDS concentrations varying by brewing method.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Essential Brewing Variables" id="variables">
+      <h3 class="text-xl font-semibold mt-6 mb-3">Grind Size and Consistency</h3>
+      <p class="leading-relaxed mb-4">
+        Grind size is perhaps the most critical variable in coffee brewing, directly affecting surface area, extraction rate, and flow dynamics. Different brewing methods require specific grind sizes to achieve optimal extraction within their typical contact times. <a href="https://www.ncbi.nlm.nih.gov" target="_blank" rel="noopener noreferrer">Scientific research</a> has demonstrated that particle size distribution significantly impacts extraction uniformity and flavor clarity.
+      </p>
+      <ul class="list-disc pl-6 mb-4 space-y-2">
+        <li><strong>Extra Fine:</strong> Required for Turkish coffee and some espresso preparations</li>
+        <li><strong>Fine:</strong> Ideal for espresso and AeroPress (short brew times)</li>
+        <li><strong>Medium-Fine:</strong> Perfect for pour-over methods like Hario V60 and Kalita Wave</li>
+        <li><strong>Medium:</strong> Standard for drip coffee machines and siphon brewing</li>
+        <li><strong>Medium-Coarse:</strong> Recommended for Chemex and batch brewers</li>
+        <li><strong>Coarse:</strong> Essential for French press and cold brew methods</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">Water Temperature</h3>
+      <p class="leading-relaxed mb-4">
+        Water temperature significantly affects extraction rate and compound solubility. The Specialty Coffee Association recommends brewing temperatures between 195°F and 205°F (90°C-96°C) for optimal extraction. Temperatures below this range may result in under-extraction and sour flavors, while excessively hot water can over-extract bitter compounds and scorch delicate aromatics.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">Coffee-to-Water Ratio</h3>
+      <p class="leading-relaxed mb-4">
+        The ratio of coffee to water determines beverage strength and concentration. Standard brewing ratios range from 1:15 to 1:18 (coffee:water by weight), though personal preferences and specific brewing methods may warrant adjustment. We recommend starting with a 1:16 ratio and adjusting based on taste preferences and coffee characteristics.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Brewing Method Categories" id="methods">
+      <p class="leading-relaxed mb-4">
+        Coffee brewing methods can be categorized based on their extraction mechanics: immersion, percolation, and hybrid methods. Each category produces distinct flavor profiles and requires specific techniques for optimal results.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">Immersion Methods</h3>
+      <p class="leading-relaxed mb-4">
+        Immersion brewing involves steeping coffee grounds in water for a specific duration before separation. This method, exemplified by French press and cupping, typically produces full-bodied coffee with pronounced mouthfeel. The extended contact time allows for thorough extraction of oils and colloids that contribute to body and texture.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">Percolation Methods</h3>
+      <p class="leading-relaxed mb-4">
+        Percolation methods, including drip brewing and pour-over, continuously pass fresh water through the coffee bed. This creates a cleaner cup with more defined acidity and clarity. The <a href="/coffee-brewing/history/">history of coffee brewing</a> traces the evolution of these methods from simple cloth filters to modern precision equipment.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">Pressure Methods</h3>
+      <p class="leading-relaxed mb-4">
+        Espresso and related methods use pressure to force water through finely-ground coffee, creating concentrated beverages with distinctive crema and intense flavor. These methods require specialized equipment and precise control over multiple variables including pressure, temperature, and extraction time.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Water Quality and Composition" id="water">
+      <p class="leading-relaxed mb-4">
+        Water constitutes approximately 98% of brewed coffee, making its quality paramount to the final beverage. Ideal brewing water should be clean, free from off-flavors, and contain appropriate mineral content to facilitate proper extraction without contributing unwanted tastes.
+      </p>
+      <p class="leading-relaxed mb-4">
+        The Specialty Coffee Association recommends water with total dissolved solids (TDS) between 75-250 mg/L, calcium hardness of 17-85 mg/L, and alkalinity around 40-75 mg/L. These specifications help ensure consistent extraction while preventing scale buildup in equipment.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Many baristas use filtered or specially formulated water to achieve optimal brewing conditions. The <a href="/coffee-brewing/tools/">tools and resources section</a> provides detailed information on water treatment options and testing methods for maintaining ideal water chemistry.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Equipment Essentials" id="equipment">
+      <p class="leading-relaxed mb-4">
+        Quality coffee brewing requires appropriate equipment, though the specific tools needed vary by method. Essential equipment categories include grinders, brewing devices, scales, kettles, and storage solutions.
+      </p>
+      <p class="leading-relaxed mb-4">
+        A quality burr grinder is arguably the most important investment for any coffee enthusiast. Consistent particle size distribution enables even extraction and flavor clarity. Blade grinders, while affordable, produce inconsistent particle sizes and are not recommended for serious brewing.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Digital scales enable precise measurement of coffee and water, ensuring consistency and allowing for systematic adjustment of brewing parameters. Look for scales with 0.1g precision and adequate capacity for your brewing vessel.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Conclusion and Next Steps" id="conclusion">
+      <p class="leading-relaxed mb-4">
+        This overview provides the foundation for exploring specific brewing methods and techniques in greater depth. As you continue your coffee journey, we recommend exploring our detailed guides on <a href="/coffee-brewing/technical-deep-dive/">brewing science</a>, <a href="/coffee-brewing/tools/">equipment selection</a>, and <a href="/coffee-brewing/challenges/">troubleshooting common issues</a>.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Remember that coffee brewing is a continuous learning process. Even experienced baristas constantly refine their techniques and discover new approaches to extracting exceptional flavors from their beans. Start with the fundamentals outlined here, practice consistently, and don't be afraid to experiment within the principles of good extraction.
+      </p>
+    </ContentSection>
+  </article>
+</TopicLayout>

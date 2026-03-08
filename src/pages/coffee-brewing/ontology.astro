@@ -1,0 +1,135 @@
+---
+import TopicLayout from '../../layouts/TopicLayout.astro';
+import ContentSection from '../../components/ContentSection.astro';
+
+const title = "Coffee Ontology - Varieties, Processing & Knowledge Base | Espresso Brews";
+const description = "Comprehensive coffee knowledge base covering Arabica vs Robusta, processing methods, origin regions, roasting profiles, and coffee classification systems.";
+---
+
+<TopicLayout title={title} description={description} currentPage="ontology">
+  <article class="prose dark:prose-invert max-w-none">
+    <h1 class="text-4xl font-bold text-slate-900 dark:text-white mb-6">Coffee Ontology & Knowledge Base</h1>
+    
+    <ContentSection title="Coffee Species and Varieties" id="species">
+      <p class="text-lg leading-relaxed mb-4">
+        The coffee family (Rubiaceae) encompasses over 120 species, though only two dominate commercial production: Coffea arabica and Coffea canephora (Robusta). Arabica accounts for approximately 60-70% of global production and is prized for its complex flavor profile, while Robusta contributes 30-40% and offers higher caffeine content and disease resistance.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Arabica coffee originated in the highlands of Ethiopia and thrives at elevations between 1,200-2,200 meters. The species is genetically diploid (44 chromosomes) and self-pollinating, which limits genetic diversity but maintains varietal characteristics. Arabica's flavor complexity arises from higher lipid and sugar content compared to Robusta.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Robusta (Coffea canephora var. Robusta) grows at lower elevations (0-800 meters) and exhibits greater environmental tolerance. The species is tetraploid and cross-pollinating, contributing to broader genetic diversity. Robusta contains approximately twice the caffeine of Arabica (2.2-2.7% vs 1.2-1.5%), contributing to its bitter taste and insect resistance.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Coffee Varietals and Cultivars" id="varietals">
+      <p class="leading-relaxed mb-4">
+        Within Arabica, numerous varietals have developed through natural mutation, selective breeding, and hybridization. Understanding these varietals helps predict flavor characteristics and cultivation requirements. The Specialty Coffee Association and <a href="https://www.worldcoffeeresearch.org" target="_blank" rel="noopener noreferrer">World Coffee Research</a> maintain extensive databases of coffee varieties.
+      </p>
+      
+      <h3 class="text-xl font-semibold mt-6 mb-3">Traditional Varietals</h3>
+      <p class="leading-relaxed mb-4">
+        <strong>Typica</strong> represents the foundational Arabica varietal from which most others descend. Originally from Yemen, Typica spread globally and developed into regional varieties including Java, Maragogipe, and Hawaiian Kona. Typica produces exceptional cup quality but offers low yields and disease susceptibility.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Bourbon</strong>, named for the island of Réunion (formerly Bourbon), mutated from Typica and produces approximately 20-30% more fruit. The varietal exists in red, yellow, and orange phenotypes, each with slightly different characteristics. Bourbon is known for excellent sweetness and clarity in the cup.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Ethiopian Heirlooms</strong> comprise indigenous varieties grown in coffee's birthplace. Rather than single cultivars, Ethiopian coffees typically consist of mixed indigenous varieties adapted to local conditions over centuries. These varieties contribute to Ethiopia's renowned floral and fruity cup profiles.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">Modern Varieties</h3>
+      <p class="leading-relaxed mb-4">
+        <strong>Caturra</strong>, a Bourbon mutation discovered in Brazil, features dwarf stature enabling denser planting. The variety produces high yields with good cup quality, though it requires significant fertilization and is susceptible to coffee leaf rust.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Catuai</strong>, a hybrid of Caturra and Mundo Novo, combines dwarf stature with high yield potential and good disease resistance. The variety is widely planted throughout Central America and Brazil.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Gesha</strong> (or Geisha) gained international recognition after Panamanian farms began producing exceptional lots. Originally from Ethiopia's Gesha region, this variety produces distinctive floral, tea-like, and jasmine characteristics when grown at high elevations with careful processing.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Processing Methods" id="processing">
+      <p class="leading-relaxed mb-4">
+        Processing—the method of removing coffee cherry fruit from the seed (bean)—profoundly affects final flavor. The three primary methods (washed, natural, and honey/pulped natural) create distinct flavor profiles through different fermentation and drying protocols.
+      </p>
+      
+      <h3 class="text-xl font-semibold mt-6 mb-3">Washed (Wet) Process</h3>
+      <p class="leading-relaxed mb-4">
+        Washed processing removes all fruit material before drying, producing clean, bright cups that emphasize origin and varietal characteristics. The process involves depulping, fermentation to remove mucilage, washing, and drying. Washed coffees typically feature higher acidity, clarity, and tea-like body.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Fermentation duration (12-72 hours) significantly affects flavor development. Extended fermentation can introduce fruity, wine-like characteristics, while shorter durations maintain crisp, clean profiles. Water quality during washing also impacts final cup cleanliness.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">Natural (Dry) Process</h3>
+      <p class="leading-relaxed mb-4">
+        Natural processing dries the entire cherry intact, allowing fruit sugars and compounds to influence the seed. This traditional method produces fruity, berry-like, and wine-like flavors with heavier body and lower acidity. The process requires careful drying (2-4 weeks) to prevent mold and over-fermentation.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Ethiopian and Brazilian naturals represent classic examples of this method's potential. When executed well, natural processing creates complex, fruit-forward coffees. However, inconsistent drying can produce musty, fermented, or overly earthy flavors.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">Honey/Pulped Natural Process</h3>
+      <p class="leading-relaxed mb-4">
+        Honey processing removes the skin and some fruit pulp while retaining mucilage during drying. Varying mucilage levels (white, yellow, red, black honey) create different sweetness and fruit characteristics. This method balances the clarity of washed processing with the body and sweetness of naturals.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Coffee Origins and Terroir" id="origins">
+      <p class="leading-relaxed mb-4">
+        Coffee growing regions exhibit distinct flavor profiles influenced by terroir—combinations of climate, soil, elevation, and cultivation practices. Understanding regional characteristics helps predict flavor profiles and select coffees matching personal preferences.
+      </p>
+      
+      <h3 class="text-xl font-semibold mt-6 mb-3">African Origins</h3>
+      <p class="leading-relaxed mb-4">
+        <strong>Ethiopia</strong>: The birthplace of coffee produces exceptional diversity. Washed Ethiopian coffees feature floral, citrus, and tea-like characteristics, while naturals offer intense berry and wine notes. Regions including Yirgacheffe, Sidamo, and Guji each contribute distinctive profiles.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Kenya</strong>: Kenyan coffees are renowned for intense blackcurrant (cassis), tomato, and wine-like acidity. The AA, AB, and PB grade designations refer to bean size rather than quality. Kenyan processing typically involves double fermentation, contributing to exceptional clarity.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">Latin American Origins</h3>
+      <p class="leading-relaxed mb-4">
+        <strong>Colombia</strong>: Colombia's diverse microclimates produce varied profiles, generally characterized by balanced sweetness, medium body, and caramel notes. The country's elevation ranges enable multiple harvest seasons throughout the year.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Brazil</strong>: As the world's largest producer, Brazil primarily grows coffees with nutty, chocolate, and caramel characteristics. Lower growing elevations and mechanized harvesting contribute to consistent, approachable profiles suitable for espresso blending.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Guatemala</strong>: Guatemalan coffees often feature chocolate, spice, and stone fruit notes with balanced acidity. The country's volcanic soils and diverse elevations create distinct regional profiles from Antigua, Huehuetenango, and other growing areas.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Roast Profiles and Development" id="roasting">
+      <p class="leading-relaxed mb-4">
+        Roasting transforms green coffee through Maillard reactions, caramelization, and pyrolysis. Roast level significantly affects flavor, with lighter roasts emphasizing origin characteristics and darker roasts developing roast-derived flavors.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Light Roasts</strong> (cinnamon, New England): High acidity, pronounced fruit and floral notes, tea-like body. Light roasts preserve origin characteristics but can taste grassy or sour if underdeveloped.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Medium Roasts</strong> (city, American): Balanced acidity and body, caramel sweetness, rounded flavor. Medium roasts offer versatility across brewing methods and appeal to broad audiences.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Dark Roasts</strong> (French, Italian): Low acidity, heavy body, pronounced bitterness, roast flavors (smoke, carbon). Dark roasts mask origin characteristics but offer consistent, bold profiles suitable for espresso with milk.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Brewing Method Suitability" id="brewing-suitability">
+      <p class="leading-relaxed mb-4">
+        Different coffees suit different brewing methods based on their flavor profiles and physical characteristics. Understanding these relationships helps optimize coffee selection and preparation.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Espresso</strong>: Requires coffees with sufficient solubility and body to cut through milk. Medium to dark roasts with chocolate, nut, and caramel profiles typically perform well. Single origins can work but often benefit from blending for balance and crema.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Pour-Over</strong>: Excels with high-grown Arabicas featuring complex acidity and clarity. Light to medium roasts from Ethiopia, Kenya, and Colombia showcase the method's ability to highlight nuanced flavors.
+      </p>
+      <p class="leading-relaxed mb-4">
+        The <a href="/coffee-brewing/tools/">tools and resources</a> section provides detailed pairing recommendations, while the <a href="/coffee-brewing/">overview section</a> explains how brewing variables interact with coffee characteristics.
+      </p>
+    </ContentSection>
+  </article>
+</TopicLayout>

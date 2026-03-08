@@ -1,0 +1,26 @@
+---
+const stats = [
+  { label: 'Brewing Methods', value: '12+' },
+  { label: 'Coffee Regions', value: '50+' },
+  { label: 'Extraction Guides', value: '25+' },
+];
+---
+
+<div class="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
+  <h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4">Quick Stats</h3>
+  <div class="space-y-4">
+    {stats.map(stat => (
+      <div class="flex justify-between items-center">
+        <span class="text-slate-600 dark:text-slate-400 text-sm">{stat.label}</span>
+        <span class="text-primary font-bold">{stat.value}</span>
+      </div>
+    ))}
+  </div>
+</div>
+
+<div class="mt-6 bg-primary/5 dark:bg-primary/10 rounded-lg p-6 border border-primary/20">
+  <h3 class="text-sm font-bold text-primary uppercase tracking-wider mb-2">Did You Know?</h3>
+  <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+    Coffee is the second most traded commodity in the world, after crude oil. Over 2.25 billion cups are consumed daily worldwide.
+  </p>
+</div>

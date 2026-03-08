@@ -1,0 +1,109 @@
+---
+import TopicLayout from '../../layouts/TopicLayout.astro';
+import ContentSection from '../../components/ContentSection.astro';
+
+const title = "Coffee Brewing Science - Extraction Physics & Chemistry | Espresso Brews";
+const description = "Deep technical analysis of coffee extraction science including TDS, extraction yield, grind particle distribution, water chemistry, and brewing physics.";
+---
+
+<TopicLayout title={title} description={description} currentPage="technical">
+  <article class="prose dark:prose-invert max-w-none">
+    <h1 class="text-4xl font-bold text-slate-900 dark:text-white mb-6">Technical Deep-Dive: The Science of Coffee Extraction</h1>
+    
+    <ContentSection title="Fundamentals of Coffee Chemistry" id="chemistry">
+      <p class="text-lg leading-relaxed mb-4">
+        Coffee extraction is a complex physico-chemical process involving the dissolution of over 1,000 chemical compounds from roasted coffee grounds into water. Understanding these processes enables precise control over flavor development and consistency in brewing. This technical analysis explores the scientific principles underlying every aspect of coffee preparation.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Coffee beans contain approximately 30% soluble compounds by weight, though not all are desirable in the final cup. The extraction process selectively dissolves these compounds based on their chemical properties, molecular weight, and solubility characteristics at various temperatures and contact times.
+      </p>
+      <p class="leading-relaxed mb-4">
+        According to research published in the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC Perspective" target="_blank" rel="noopener noreferrer">Journal of Food Science</a>, the primary compound categories in coffee include chlorogenic acids (5-8%), caffeine (1-2%), trigonelline (1%), lipids (12-17%), carbohydrates (40-50%), and proteins (10-13%). Each category contributes distinct sensory characteristics to the brewed beverage.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Extraction Yield and TDS" id="extraction-metrics">
+      <p class="leading-relaxed mb-4">
+        Two primary metrics quantify coffee extraction: Extraction Yield (EY) and Total Dissolved Solids (TDS). Extraction Yield represents the percentage of coffee mass dissolved into the beverage, typically ranging from 18-22% for optimal flavor. TDS measures the concentration of dissolved solids in the final beverage, usually expressed as a percentage.
+      </p>
+      <p class="leading-relaxed mb-4">
+        The relationship between these metrics follows the equation: TDS = (Coffee Dose × EY) / Beverage Mass. This relationship enables brewers to calculate expected concentrations and adjust parameters accordingly. For example, brewing 20g of coffee at 20% extraction yield to produce 300g of beverage yields approximately 1.33% TDS.
+      </p>
+      <p class="leading-relaxed mb-4">
+        The Specialty Coffee Association recommends target extraction yields between 18-22% for optimal flavor balance. Below 18%, under-extraction produces sour, thin, and acidic flavors. Above 22%, over-extraction introduces excessive bitterness, astringency, and harsh characteristics. These ranges assume proper brewing parameters and high-quality coffee.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Particle Size Distribution and Grinding" id="grinding">
+      <p class="leading-relaxed mb-4">
+        Grind particle size distribution (PSD) significantly impacts extraction uniformity and flavor development. Ideal grinding produces a narrow distribution of particle sizes, ensuring consistent extraction across the coffee bed. Research by <a href="https://www.sciencedirect.com" target="_blank" rel="noopener noreferrer">academic institutions</a> has demonstrated that PSD affects flow rate, contact time, and extraction efficiency.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Coffee particles exhibit bimodal distribution characteristics, with distinct peaks representing fractured cell structures and whole cell fragments. The fine particles (fines) extract rapidly due to high surface-area-to-volume ratios, while coarse particles extract more slowly. Proper grinding minimizes fines while achieving target average particle sizes.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Different brewing methods require specific grind sizes based on contact time and extraction mechanics. Espresso uses fine grinding (200-500 microns) for rapid extraction under pressure. Pour-over methods use medium-fine grinding (500-800 microns) for controlled flow through the coffee bed. French press uses coarse grinding (800-1200 microns) to facilitate filtration while allowing extended steeping.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Water Chemistry and Quality" id="water-chemistry">
+      <p class="leading-relaxed mb-4">
+        Water quality profoundly affects coffee extraction and flavor. Beyond simple purity, water mineral content influences compound solubility, extraction kinetics, and final taste. The Specialty Coffee Association specifies ideal water parameters: total dissolved solids (TDS) 75-250 mg/L, calcium hardness 17-85 mg/L, and pH 6.5-7.5.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Calcium and magnesium ions facilitate coffee extraction by forming complexes with coffee compounds. Magnesium particularly enhances extraction of fruity and acidic compounds, while calcium contributes to body and crema stability. However, excessive hardness promotes scale formation in equipment and can mute acidity.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Carbonate hardness (alkalinity) buffers pH during extraction, preventing excessive acidity in the final cup. Ideal alkalinity ranges from 40-75 mg/L as CaCO3. Insufficient alkalinity results in sharp, aggressive acidity, while excessive alkalinity produces flat, chalky flavors and inhibits proper extraction of acidic compounds.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Temperature and Thermal Dynamics" id="temperature">
+      <p class="leading-relaxed mb-4">
+        Brewing temperature significantly affects extraction kinetics and compound solubility. Higher temperatures increase extraction rates and compound solubility, while lower temperatures produce different extraction profiles favoring certain compound categories. The Arrhenius equation describes the temperature dependence of extraction rates.
+      </p>
+      <p class="leading-relaxed mb-4">
+        The Specialty Coffee Association recommends brewing temperatures between 195-205°F (90.5-96°C). Within this range, specific temperatures favor different flavor characteristics. Lower temperatures (195-200°F) emphasize acidity and floral notes, while higher temperatures (200-205°F) enhance body, sweetness, and caramelized flavors.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Thermal stability during brewing ensures consistent extraction. Heat loss in pour-over methods can significantly impact results. Pre-heating equipment, using insulated vessels, and maintaining consistent pour temperatures help achieve reproducible brewing conditions.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Pressure and Flow Dynamics" id="pressure">
+      <p class="leading-relaxed mb-4">
+        Pressure-based extraction, primarily in espresso preparation, introduces additional complexity to brewing physics. Standard espresso extracts at 9 bars (130 psi) of pressure, forcing water through finely-ground coffee in 25-30 seconds. This pressure significantly exceeds gravity-driven methods and produces unique extraction characteristics.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Pressure affects extraction by altering water's physical properties and forcing it through coffee cell structures that gravity alone cannot penetrate. This mechanical action extracts lipids and colloids that contribute to espresso's distinctive body and crema. The <a href="/coffee-brewing/ontology/">coffee ontology</a> section provides detailed information on espresso's unique chemical composition.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Flow rate through the coffee bed depends on pressure, grind size, and coffee bed resistance. Pre-infusion—gradually increasing pressure before full extraction—improves extraction uniformity by allowing the coffee puck to saturate evenly before high-pressure flow begins.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Kinetic Modeling of Extraction" id="kinetics">
+      <p class="leading-relaxed mb-4">
+        Coffee extraction follows complex kinetic models involving diffusion, dissolution, and mass transfer processes. Early extraction primarily involves surface dissolution, while later stages depend on diffusion from within coffee particles. This multi-phase extraction explains why extended contact times don't simply produce stronger coffee but alter flavor profiles fundamentally.
+      </p>
+      <p class="leading-relaxed mb-4">
+        The diffusion coefficient for coffee compounds varies significantly based on molecular size and coffee particle structure. Small molecules like caffeine and organic acids diffuse rapidly, while larger polyphenols and Maillard reaction products require longer contact times. This differential extraction creates the temporal evolution of flavor during brewing.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Advanced brewing techniques leverage these kinetic principles. The blooming phase in pour-over allows CO2 release and initial surface extraction before main pouring. Agitation increases mass transfer rates, though excessive agitation can cause uneven extraction and channeling.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Practical Applications" id="applications">
+      <p class="leading-relaxed mb-4">
+        Understanding extraction science enables systematic troubleshooting and recipe development. When coffee tastes sour and thin, under-extraction is likely—the brew requires finer grinding, higher temperature, longer contact time, or increased agitation. Bitter, astringent flavors indicate over-extraction, requiring opposite adjustments.
+      </p>
+      <p class="leading-relaxed mb-4">
+        The <a href="/coffee-brewing/challenges/">common challenges</a> section provides practical solutions for extraction problems. By measuring TDS and calculating extraction yield, baristas can objectively assess brewing performance and make data-driven adjustments rather than relying solely on taste.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Refractometers enable precise TDS measurement, allowing quantitative brewing analysis. Combined with precise scales and timers, these tools transform coffee brewing from art to reproducible craft. However, sensory evaluation remains essential, as optimal extraction percentages vary based on coffee origin, processing, roast level, and personal preference.
+      </p>
+    </ContentSection>
+  </article>
+</TopicLayout>

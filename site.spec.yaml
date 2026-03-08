@@ -1,0 +1,219 @@
+# site.spec.yaml — Site-Level Declarative Specification
+# Domain: espressobrews.com
+# Created: 2026-03-08
+# Status: STEP_00_INTAKE_COMPLETE — AWAITING TEMPLATE ASSIGNMENT
+
+# ============================================================
+# SITE IDENTITY
+# ============================================================
+site:
+  domain: "espressobrews.com"
+  netlify_subdomain: "espressobrews"
+  github_repo: "espressobrews"
+  site_title: "Espresso Brews - Coffee Brewing Guides & Techniques"
+
+# ============================================================
+# TOPIC — Coffee brewing guides and techniques
+# ============================================================
+topic:
+  name: "Coffee Brewing Guides & Espresso Techniques"
+  slug: "coffee-brewing"
+  keywords:
+    - "espresso brewing"
+    - "coffee extraction"
+    - "pour over coffee"
+    - "french press guide"
+    - "coffee grinding"
+    - "bean selection"
+    - "brewing ratios"
+    - "latte art"
+    - "coffee equipment"
+    - "specialty coffee"
+
+# ============================================================
+# FORBIDDEN — Prevent cross-contamination with language site
+# ============================================================
+forbidden:
+  terms:
+    - "language learning"
+    - "second language"
+    - "language acquisition"
+    - "translation services"
+    - "interpreter"
+    - "bilingual"
+    - "multilingual"
+    - "ESL"
+    - "foreign language"
+    - "language tutor"
+  patterns:
+    - "language.?learning"
+    - "second.?language"
+    - "translation.?service"
+    - "interpretation.?service"
+    - "bilingual.?service"
+  generic:
+    - "placeholder"
+    - "lorem ipsum"
+    - "As an AI"
+    - "ChatGPT"
+    - "I don't have access"
+    - "Key concept 1 related to"
+
+# ============================================================
+# TEMPLATE — TO BE ASSIGNED BY ORCHESTRATION AGENT
+# ============================================================
+template:
+  id: "PENDING_ORCHESTRATION_ASSIGNMENT"
+  name: "PENDING"
+  group: "PENDING"
+  selection_reason: "AWAITING ASSIGNMENT: Selected by orchestration agent based on rotation rules and topic fit"
+
+# ============================================================
+# ASTRO CONFIGURATION
+# ============================================================
+astro:
+  site_url: "https://espressobrews.com"
+  output: "static"
+  integrations:
+    - "astro-seo"
+    - "@astrojs/sitemap"
+  packages:
+    - "astro: ^4.0.0"
+    - "astro-seo: ^1.1.0"
+    - "@astrojs/sitemap: ^3.7.0"
+  dev_packages:
+    - "@playwright/test: ^1.58.2"
+
+# ============================================================
+# PAGE STRUCTURE — 7 pillar pages + homepage
+# ============================================================
+pages:
+  homepage:
+    file: "/src/pages/index.astro"
+    layout: "BaseLayout"
+    nav_links: 8
+
+  pillars:
+    - key: "index"
+      file: "/src/pages/coffee-brewing/index.astro"
+      spec: "specs/pages/index.spec.yaml"
+      name: "Overview"
+      url: "/coffee-brewing/"
+
+    - key: "history"
+      file: "/src/pages/coffee-brewing/history.astro"
+      spec: "specs/pages/history.spec.yaml"
+      name: "History & Evolution"
+      url: "/coffee-brewing/history/"
+
+    - key: "technical-deep-dive"
+      file: "/src/pages/coffee-brewing/technical-deep-dive.astro"
+      spec: "specs/pages/technical-deep-dive.spec.yaml"
+      name: "Technical Deep-Dive"
+      url: "/coffee-brewing/technical-deep-dive/"
+
+    - key: "ontology"
+      file: "/src/pages/coffee-brewing/ontology.astro"
+      spec: "specs/pages/ontology.spec.yaml"
+      name: "Ontology & Knowledge Base"
+      url: "/coffee-brewing/ontology/"
+
+    - key: "trends"
+      file: "/src/pages/coffee-brewing/trends.astro"
+      spec: "specs/pages/trends.spec.yaml"
+      name: "Current Trends & Future Outlook"
+      url: "/coffee-brewing/trends/"
+
+    - key: "tools"
+      file: "/src/pages/coffee-brewing/tools.astro"
+      spec: "specs/pages/tools.spec.yaml"
+      name: "Tools & Resources"
+      url: "/coffee-brewing/tools/"
+
+    - key: "challenges"
+      file: "/src/pages/coffee-brewing/challenges.astro"
+      spec: "specs/pages/challenges.spec.yaml"
+      name: "Common Challenges & Solutions"
+      url: "/coffee-brewing/challenges/"
+
+# ============================================================
+# COMPONENTS & LAYOUTS
+# ============================================================
+components:
+  - "Header.astro"
+  - "Footer.astro"
+  - "Navigation.astro"
+  - "ContentSection.astro"
+  - "Sidebar.astro"
+
+layouts:
+  - name: "BaseLayout.astro"
+    includes: ["astro-seo in <head>", "Header", "Footer", "canonical URL", "meta tags"]
+  - name: "TopicLayout.astro"
+    extends: "BaseLayout"
+    includes: ["Navigation", "Sidebar", "two-column layout"]
+
+# ============================================================
+# GLOBAL CONTENT RULES
+# ============================================================
+content_rules:
+  word_count_min: 3000
+  h2_sections_min: 5
+  external_links_min: 3
+  external_links_max: 10
+  internal_links_min: 4
+  canonical_url: "new URL(Astro.url.pathname, Astro.site)"
+  meta_title_length: [50, 60]
+  meta_description_length: [150, 160]
+  script_directive: "is:inline"
+
+  allowed_sources:
+    - "wikipedia.org"
+    - "nih.gov"
+    - "sca.coffee"
+    - "ncbi.nlm.nih.gov"
+    - "sprudge.com"
+    - "perfectdailygrind.com"
+    - "baristahustle.com"
+    - "gov sites"
+    - "edu sites with public content"
+
+  blocked_sources:
+    - "cambridge.org/core"
+    - "tandfonline.com"
+    - "routledge.com"
+    - "jstor.org"
+    - "sciencedirect.com"
+    - "apa.org"
+
+# ============================================================
+# INTERLINKING RULES
+# ============================================================
+interlinking:
+  overview_links_to: "all 6 other pillars"
+  each_pillar_links_to: "overview + at least 4 other pillars"
+  placement: "body text (contextual), NOT sidebar-only"
+  anchor_text: "descriptive, explains relationship"
+  homepage_links_to: "overview page via topic cards"
+
+# ============================================================
+# VALIDATION
+# ============================================================
+validation:
+  per_page:
+    - "word_count >= 3000"
+    - "h2_count >= 5"
+    - "internal_links >= 4"
+    - "external_links >= 3"
+    - "forbidden_terms == 0"
+    - "blocked_sources == 0"
+    - "frontmatter has title, description, canonicalURL"
+
+  site_wide:
+    - "all 7 pillar .astro files exist"
+    - "homepage exists and imports BaseLayout"
+    - "npm run build exits 0"
+    - "sitemap-index.xml generated with all page URLs"
+    - "robots.txt exists with correct sitemap URL"
+    - "no temp scripts in project root"
+    - "no .env in git"

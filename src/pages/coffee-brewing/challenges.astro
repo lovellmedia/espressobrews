@@ -1,0 +1,144 @@
+---
+import TopicLayout from '../../layouts/TopicLayout.astro';
+import ContentSection from '../../components/ContentSection.astro';
+
+const title = "Common Coffee Brewing Problems & Solutions | Espresso Brews";
+const description = "Troubleshooting guide for coffee brewing challenges including sour taste, bitterness, channeling, and equipment issues with practical solutions for better coffee.";
+---
+
+<TopicLayout title={title} description={description} currentPage="challenges">
+  <article class="prose dark:prose-invert max-w-none">
+    <h1 class="text-4xl font-bold text-slate-900 dark:text-white mb-6">Common Challenges & Solutions</h1>
+    
+    <ContentSection title="Introduction to Troubleshooting" id="introduction">
+      <p class="text-lg leading-relaxed mb-4">
+        Even experienced baristas encounter brewing challenges. Understanding common problems and their solutions enables quick diagnosis and correction, transforming frustrating experiences into learning opportunities. This guide covers the most frequent coffee brewing issues with systematic approaches to resolution.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Effective troubleshooting requires understanding cause-and-effect relationships in coffee extraction. The <a href="/coffee-brewing/technical-deep-dive/">technical deep-dive section</a> provides background on extraction science, while this section focuses on practical problem-solving.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Flavor Problems" id="flavor">
+      <h3 class="text-xl font-semibold mt-6 mb-3">Sour or Under-extracted Coffee</h3>
+      <p class="leading-relaxed mb-4">
+        Sourness indicates under-extraction, where acidic compounds dominate without balancing sweetness and bitterness. Common causes include grind that's too coarse, insufficient water temperature, short contact time, or insufficient coffee dose.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Solutions:</strong> Grind finer to increase surface area and extraction rate. Ensure water temperature reaches 195-205°F (90-96°C). Extend brewing time within method-appropriate ranges. Verify your coffee-to-water ratio isn't too diluted.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">Bitter or Over-extracted Coffee</h3>
+      <p class="leading-relaxed mb-4">
+        Bitterness and astringency indicate over-extraction, where excessive compounds have dissolved from the coffee. This often results from grind that's too fine, water that's too hot, extended contact time, or excessive agitation.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Solutions:</strong> Grind coarser to reduce extraction rate. Verify water temperature isn't exceeding 205°F (96°C). Reduce brewing time or contact duration. Minimize agitation during brewing, particularly in immersion methods.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">Weak or Watery Coffee</h3>
+      <p class="leading-relaxed mb-4">
+        Weak coffee lacks intensity and flavor development, typically resulting from insufficient coffee dose, excessive water, or stale beans. The Specialty Coffee Association recommends starting with a 1:16 coffee-to-water ratio by weight.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Solutions:</strong> Increase coffee dose or reduce water volume to strengthen ratio. Verify your scale accuracy. Check coffee freshness—beans stale significantly 2-4 weeks post-roast. Consider grinding finer to increase strength without changing ratio.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">Hollow or Empty Flavor</h3>
+      <p class="leading-relaxed mb-4">
+        Hollow coffee suggests proper extraction of some compounds without others, often due to uneven extraction or poor coffee quality. Channeling in espresso or uneven pouring in drip methods creates this imbalance.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Solutions:</strong> Improve distribution and tamping technique for espresso. Ensure even pouring and saturation in pour-over methods. Evaluate coffee quality and freshness. Consider whether your water mineral content supports proper extraction.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Equipment Issues" id="equipment">
+      <h3 class="text-xl font-semibold mt-6 mb-3">Grinder Problems</h3>
+      <p class="leading-relaxed mb-4">
+        Grinder issues manifest as inconsistent extraction, excessive fines, or inability to achieve proper grind size. Dull burrs, motor problems, or contamination are common culprits.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Solutions:</strong> Clean burrs regularly to remove oil buildup. Replace burrs according to manufacturer recommendations (typically 500-1,000 lbs of coffee). Check for foreign objects in the grinding chamber. Ensure proper calibration for your target grind size.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">Espresso Channeling</h3>
+      <p class="leading-relaxed mb-4">
+        Channeling occurs when water finds paths of least resistance through the coffee puck, creating uneven extraction. Signs include spurting, uneven extraction flow, and inconsistent shot times. Channeling results from poor distribution, uneven tamping, or improper grind.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Solutions:</strong> Use a distribution tool or Weiss Distribution Technique (WDT) to break up clumps and even out the puck. Ensure level tamping with consistent pressure. Check grinder for clumping and consider using a dosing funnel. Verify basket isn't overfilled.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">Inconsistent Brewing Temperature</h3>
+      <p class="leading-relaxed mb-4">
+        Temperature inconsistency causes variable extraction and flavor unpredictability. This affects manual methods through heat loss and automatic equipment through thermostat or heating element issues.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Solutions:</strong> Pre-heat equipment thoroughly before brewing. Use insulated servers and pre-warmed cups. For espresso machines, verify group head temperature stability—PID controllers offer superior consistency. Descale equipment regularly as mineral buildup affects heating efficiency.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Water-Related Problems" id="water">
+      <p class="leading-relaxed mb-4">
+        Water quality significantly impacts extraction and flavor. Issues include off-tastes from chlorine or contaminants, improper mineral content affecting extraction, and scale buildup from hard water.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Solutions:</strong> Use filtered water free from chlorine and off-flavors. Test water mineral content and adjust if necessary—the Specialty Coffee Association provides guidelines for ideal brewing water. Descale equipment regularly according to manufacturer recommendations. Consider remineralization for distilled or reverse osmosis water.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Technique Challenges" id="technique">
+      <h3 class="text-xl font-semibold mt-6 mb-3">Pour-Over Inconsistency</h3>
+      <p class="leading-relaxed mb-4">
+        Pour-over brewing requires coordinated pouring technique, timing, and observation. Inconsistency typically stems from pouring pattern, flow rate, or failure to adapt to specific coffee behavior.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Solutions:</strong> Practice consistent circular pouring patterns starting from the center and moving outward. Use a gooseneck kettle for flow control. Time your pours and total brew time to establish baselines. Observe the coffee bed after brewing—uneven grounds indicate uneven pouring.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">French Press Sediment</h3>
+      <p class="leading-relaxed mb-4">
+        Excessive sediment in French press coffee results from fines passing through the mesh filter or agitation disturbing settled grounds during plunging.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Solutions:</strong> Grind coarser to reduce fines, though this may require extended steeping time. Skim surface grounds before plunging. Plunge slowly and steadily without agitating the slurry. Consider secondary filtering through a paper filter if sediment remains problematic.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">Espresso Timing Issues</h3>
+      <p class="leading-relaxed mb-4">
+        Shot timing outside the 25-30 second target range indicates grind or dose problems. Fast shots taste sour and thin; slow shots taste bitter and harsh.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Solutions:</strong> Adjust grind size as the primary timing control—finer for slower extraction, coarser for faster. Verify consistent dose weight. Check pump pressure if timing suddenly changes. Remember that aging beans require progressively finer grinding.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Coffee Quality Issues" id="quality">
+      <p class="leading-relaxed mb-4">
+        Sometimes brewing problems stem from coffee quality rather than technique. Understanding coffee freshness, storage, and selection helps identify these issues.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Stale Coffee:</strong> Coffee loses aromatic compounds rapidly after roasting, becoming flat and woody. Purchase freshly roasted coffee (within 2 weeks) and store properly in airtight, opaque containers. Avoid refrigeration, which causes condensation and flavor contamination.
+      </p>
+      <p class="leading-relaxed mb-4">
+        <strong>Roast Problems:</strong> Over-roasted coffee tastes carbonized and bitter regardless of brewing technique. Under-roasted coffee tastes grassy and sour. Quality roasting develops sweetness and complexity without introducing roast defects.
+      </p>
+      <p class="leading-relaxed mb-4">
+        The <a href="/coffee-brewing/ontology/">coffee ontology section</a> provides information on evaluating coffee quality and selecting beans appropriate for your brewing methods.
+      </p>
+    </ContentSection>
+
+    <ContentSection title="Systematic Troubleshooting Approach" id="systematic">
+      <p class="leading-relaxed mb-4">
+        When problems persist, systematic analysis helps identify root causes. Document your current parameters: grind setting, dose, yield, time, temperature, and water quality. Change only one variable at a time while observing results.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Consider keeping a brewing journal noting recipes, observations, and adjustments. This documentation reveals patterns and accelerates learning. Many brewing problems resolve through consistent practice and attention to fundamentals outlined in our <a href="/coffee-brewing/">overview section</a>.
+      </p>
+      <p class="leading-relaxed mb-4">
+        Remember that perfect coffee is a moving target—beans age, environmental conditions change, and preferences evolve. Embrace the continuous learning process that makes coffee brewing endlessly fascinating.
+      </p>
+    </ContentSection>
+  </article>
+</TopicLayout>
