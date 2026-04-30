@@ -1,148 +1,477 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-
 const title = "Espresso Brews - Coffee Brewing Guides & Techniques";
 const description = "Comprehensive guides on coffee brewing, espresso techniques, pour-over methods, and specialty coffee preparation for enthusiasts and professionals.";
 ---
 
-<BaseLayout title={title} description={description}>
-  <Header slot="header" />
-  
-  <!-- Hero Section -->
-  <section class="relative bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div class="flex flex-col gap-8">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
-            <span class="material-symbols-outlined text-sm">verified</span>
-            Professional Brewing Guides
-          </div>
-          <h1 class="text-slate-900 dark:text-slate-100 text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
-            Master the Art of <span class="text-primary">Coffee Brewing</span>
-          </h1>
-          <p class="text-slate-600 dark:text-slate-400 text-lg sm:text-xl leading-relaxed max-w-xl">
-            From espresso extraction to pour-over perfection, discover comprehensive guides and techniques for brewing exceptional coffee at home or professionally.
-          </p>
-          <div class="flex flex-wrap gap-4">
-            <a href="/coffee-brewing/" class="bg-primary text-white px-8 py-4 rounded text-base font-bold shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all">
-              Explore Guides
-            </a>
-            <a href="/coffee-brewing/tools/" class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white px-8 py-4 rounded text-base font-bold hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
-              Equipment Guide
-            </a>
-          </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="description" content={description}>
+    <link rel="canonical" href="https://espressobrews.com/">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: #fafafa;
+        }
+
+        /* Navigation */
+        nav {
+            background: #ffffff;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        nav .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1a202c;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: #4a5568;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #1a202c;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #ffffff;
+            padding: 6rem 2rem;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .hero .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-label {
+            font-size: 0.85rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #4a5568;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background: #1a202c;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-radius: 3px;
+            transition: background 0.2s;
+        }
+
+        .hero-cta:hover {
+            background: #2d3748;
+        }
+
+        /* Modular Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            color: #a0aec0;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            font-size: 1.05rem;
+            color: #718096;
+            max-width: 700px;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 2.5rem;
+            border: 1px solid #e8e8e8;
+            border-radius: 4px;
+            transition: box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+
+        .card-number {
+            font-size: 0.8rem;
+            color: #cbd5e0;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: #718096;
+            line-height: 1.7;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .content-block h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-block p {
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .content-block ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .content-block li {
+            padding: 0.75rem 0;
+            color: #4a5568;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .content-block li:before {
+            content: "\2014";
+            color: #cbd5e0;
+            margin-right: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #1a202c;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            color: #a0aec0;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        .cta-section a {
+            color: #63b3ed;
+            text-decoration: underline;
+        }
+
+        .cta-section a:hover {
+            color: #90cdf4;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background: #ffffff;
+            color: #1a202c;
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-radius: 3px;
+            transition: background 0.2s;
+            font-weight: 500;
+        }
+
+        .cta-btn:hover {
+            background: #e2e8f0;
+        }
+
+        /* Footer */
+        footer {
+            background: #ffffff;
+            border-top: 1px solid #e8e8e8;
+            padding: 3rem 2rem;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer p {
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #718096;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer a:hover {
+            color: #1a202c;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+            }
+
+            footer .container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            footer a {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">Espresso Brews</a>
+            <ul>
+                <li><a href="/coffee-brewing/">Overview</a></li>
+                <li><a href="/coffee-brewing/history/">History</a></li>
+                <li><a href="/coffee-brewing/technical-deep-dive/">Technical</a></li>
+                <li><a href="/coffee-brewing/tools/">Tools</a></li>
+            </ul>
         </div>
-        <div class="relative">
-          <div class="aspect-video lg:aspect-square rounded-xl overflow-hidden shadow-2xl bg-slate-200 dark:bg-slate-800">
-            <div class="w-full h-full bg-gradient-to-br from-amber-700 to-amber-900 flex items-center justify-center">
-              <span class="material-symbols-outlined text-8xl text-white/80">coffee</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">Coffee Brewing Research</div>
+                <h1>Master the Art of Coffee Brewing</h1>
+                <p>From espresso extraction to pour-over perfection, discover comprehensive guides and techniques for brewing exceptional coffee at home or professionally.</p>
+                <a href="/coffee-brewing/" class="hero-cta">Explore Guides</a>
             </div>
-          </div>
-          <div class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-6 rounded-lg shadow-xl border border-slate-100 dark:border-slate-700 hidden sm:block">
-            <div class="flex items-center gap-4">
-              <div class="p-3 bg-primary/10 rounded-full text-primary">
-                <span class="material-symbols-outlined text-3xl">local_cafe</span>
-              </div>
-              <div>
-                <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Daily Brewers</p>
-                <p class="text-2xl font-bold text-slate-900 dark:text-white">2.25B+</p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Topic Cards -->
-  <section class="py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Coffee Brewing Resources</h2>
-        <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Explore our comprehensive collection of brewing guides, techniques, and coffee knowledge.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <a href="/coffee-brewing/" class="group cursor-pointer block">
-          <div class="aspect-video rounded-lg overflow-hidden mb-6 bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center">
-            <span class="material-symbols-outlined text-6xl text-white/80 group-hover:scale-110 transition-transform">menu_book</span>
-          </div>
-          <div class="flex flex-col gap-2">
-            <span class="text-primary text-xs font-bold uppercase tracking-widest">Foundation</span>
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Overview</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Comprehensive introduction to coffee brewing fundamentals, from bean selection to extraction principles.</p>
-          </div>
-        </a>
-        <a href="/coffee-brewing/history/" class="group cursor-pointer block">
-          <div class="aspect-video rounded-lg overflow-hidden mb-6 bg-gradient-to-br from-amber-700 to-amber-900 flex items-center justify-center">
-            <span class="material-symbols-outlined text-6xl text-white/80 group-hover:scale-110 transition-transform">history</span>
-          </div>
-          <div class="flex flex-col gap-2">
-            <span class="text-primary text-xs font-bold uppercase tracking-widest">Origins</span>
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">History & Evolution</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Journey through the rich history of coffee, from Ethiopian origins to modern specialty coffee culture.</p>
-          </div>
-        </a>
-        <a href="/coffee-brewing/technical-deep-dive/" class="group cursor-pointer block">
-          <div class="aspect-video rounded-lg overflow-hidden mb-6 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
-            <span class="material-symbols-outlined text-6xl text-white/80 group-hover:scale-110 transition-transform">science</span>
-          </div>
-          <div class="flex flex-col gap-2">
-            <span class="text-primary text-xs font-bold uppercase tracking-widest">Science</span>
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Technical Deep-Dive</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Explore the science behind extraction, grind size, water chemistry, and brewing variables.</p>
-          </div>
-        </a>
-        <a href="/coffee-brewing/ontology/" class="group cursor-pointer block">
-          <div class="aspect-video rounded-lg overflow-hidden mb-6 bg-gradient-to-br from-emerald-600 to-emerald-800 flex items-center justify-center">
-            <span class="material-symbols-outlined text-6xl text-white/80 group-hover:scale-110 transition-transform">account_tree</span>
-          </div>
-          <div class="flex flex-col gap-2">
-            <span class="text-primary text-xs font-bold uppercase tracking-widest">Knowledge</span>
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Ontology</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Structured coffee knowledge base covering varieties, processing methods, and regional characteristics.</p>
-          </div>
-        </a>
-        <a href="/coffee-brewing/trends/" class="group cursor-pointer block">
-          <div class="aspect-video rounded-lg overflow-hidden mb-6 bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center">
-            <span class="material-symbols-outlined text-6xl text-white/80 group-hover:scale-110 transition-transform">trending_up</span>
-          </div>
-          <div class="flex flex-col gap-2">
-            <span class="text-primary text-xs font-bold uppercase tracking-widest">Future</span>
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Trends & Outlook</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Stay current with emerging brewing methods, equipment innovations, and industry developments.</p>
-          </div>
-        </a>
-        <a href="/coffee-brewing/challenges/" class="group cursor-pointer block">
-          <div class="aspect-video rounded-lg overflow-hidden mb-6 bg-gradient-to-br from-rose-600 to-rose-800 flex items-center justify-center">
-            <span class="material-symbols-outlined text-6xl text-white/80 group-hover:scale-110 transition-transform">lightbulb</span>
-          </div>
-          <div class="flex flex-col gap-2">
-            <span class="text-primary text-xs font-bold uppercase tracking-widest">Solutions</span>
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Challenges</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Common brewing problems and practical solutions to improve your coffee quality.</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
+    <!-- Overview Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Resources</div>
+                <h2 class="section-title">Coffee Brewing Resources</h2>
+                <p class="section-description">Explore our comprehensive collection of brewing guides, techniques, and coffee knowledge.</p>
+            </div>
 
-  <!-- CTA Section -->
-  <section class="py-20 bg-slate-900 text-white overflow-hidden relative">
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#1773cf,transparent_70%)]"></div>
-    </div>
-    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center relative z-10">
-      <h2 class="text-3xl sm:text-4xl font-black mb-6">Start Your Coffee Journey</h2>
-      <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
-        Whether you're a beginner or experienced barista, our comprehensive guides will help you brew better coffee. For a complete reference to elevating your daily ritual, explore this <a href="https://completehomebarista.com/">home barista guide</a>.
-      </p>
-      <a href="/coffee-brewing/tools/" class="inline-block bg-primary hover:bg-primary/90 text-white font-bold px-8 py-4 rounded-lg transition-all">
-        Browse Equipment Guide
-      </a>
-    </div>
-  </section>
+            <div class="grid">
+                <a href="/coffee-brewing/" class="card">
+                    <div class="card-number">01</div>
+                    <h3>Overview</h3>
+                    <p>Comprehensive introduction to coffee brewing fundamentals, from bean selection to extraction principles.</p>
+                </a>
+                <a href="/coffee-brewing/history/" class="card">
+                    <div class="card-number">02</div>
+                    <h3>History & Evolution</h3>
+                    <p>Journey through the rich history of coffee, from Ethiopian origins to modern specialty coffee culture.</p>
+                </a>
+                <a href="/coffee-brewing/technical-deep-dive/" class="card">
+                    <div class="card-number">03</div>
+                    <h3>Technical Deep-Dive</h3>
+                    <p>Explore the science behind extraction, grind size, water chemistry, and brewing variables.</p>
+                </a>
+                <a href="/coffee-brewing/ontology/" class="card">
+                    <div class="card-number">04</div>
+                    <h3>Ontology</h3>
+                    <p>Structured coffee knowledge base covering varieties, processing methods, and regional characteristics.</p>
+                </a>
+                <a href="/coffee-brewing/trends/" class="card">
+                    <div class="card-number">05</div>
+                    <h3>Trends & Outlook</h3>
+                    <p>Stay current with emerging brewing methods, equipment innovations, and industry developments.</p>
+                </a>
+                <a href="/coffee-brewing/challenges/" class="card">
+                    <div class="card-number">06</div>
+                    <h3>Challenges</h3>
+                    <p>Common brewing problems and practical solutions to improve your coffee quality.</p>
+                </a>
+            </div>
+        </div>
+    </section>
 
-  <Footer slot="footer" />
-</BaseLayout>
+    <!-- Two Column Content -->
+    <section id="methodology" style="background: #ffffff;">
+        <div class="container">
+            <div class="two-column">
+                <div class="content-block">
+                    <h3>Brewing Framework</h3>
+                    <p>Our approach integrates established academic principles with contemporary industry requirements, ensuring theoretical rigor meets practical applicability in every cup.</p>
+                    <p>The framework covers everything from understanding bean origins and roast profiles to mastering extraction parameters and equipment calibration.</p>
+                </div>
+                <div class="content-block">
+                    <h3>Key Topics</h3>
+                    <ul>
+                        <li>Espresso extraction fundamentals</li>
+                        <li>Pour-over and drip methods</li>
+                        <li>Grind size and calibration</li>
+                        <li>Water chemistry and temperature</li>
+                        <li>Milk steaming and latte art</li>
+                        <li>Equipment selection and maintenance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Start Your Coffee Journey</h2>
+            <p>
+                Whether you're a beginner or experienced barista, our comprehensive guides will help you brew better coffee. For a complete reference to elevating your daily ritual, explore this <a href="https://completehomebarista.com/">home barista guide</a>.
+            </p>
+            <a href="/coffee-brewing/tools/" class="cta-btn">Browse Equipment Guide</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Espresso Brews. Coffee Brewing Research.</p>
+            <div>
+                <a href="/coffee-brewing/">Overview</a>
+                <a href="/coffee-brewing/tools/">Tools</a>
+                <a href="/coffee-brewing/challenges/">Challenges</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
